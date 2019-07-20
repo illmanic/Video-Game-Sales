@@ -17,7 +17,4 @@ pc = df[df['Platform'] == 'PC']
 
 sns.jointplot(x = 'Critic_Score', y = 'User_Score', data = pc, kind = 'reg')
 
-df['Year_of_Release'].value_counts().plot(c = ['Platform'])
-
-df.groupby('Genre')[['NA_Sales', 'Global_Sales']].sum().sort_values('Global_Sales', ascending = False).plot(kind = 'bar')
-
+df.groupby('Genre')[['NA_Sales', 'JP_Sales', 'EU_Sales']].sum().sort_values('NA_Sales', ascending = False).plot(kind = 'bar')
